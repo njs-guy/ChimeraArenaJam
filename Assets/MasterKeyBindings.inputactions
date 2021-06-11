@@ -11,7 +11,7 @@
                     "id": "afa03869-b99b-42d6-99f8-c643ec9ccbf1",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Tap"
                 },
                 {
                     "name": "Accept",
@@ -19,7 +19,7 @@
                     "id": "1ba548a4-fc22-47f3-8684-ed76986b4f0c",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Tap"
                 },
                 {
                     "name": "Cancel",
@@ -27,7 +27,7 @@
                     "id": "41473412-100e-4145-b62e-38cef81def11",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Tap"
                 }
             ],
             "bindings": [
