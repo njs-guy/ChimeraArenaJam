@@ -962,7 +962,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.4666667, g: 0.53333336, b: 0.6, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1739,9 +1739,24 @@ MonoBehaviour:
   headPart: 1
   bodyPart: 3
   legPart: 1
-  headSprite: {fileID: 1185625210376227553, guid: 517f57a34169fe54cbc62c634ec2c7ff, type: 3}
-  bodySprite: {fileID: 3163395358573969893, guid: 8a2bd71162822674a8eaca851981089b, type: 3}
-  legsSprite: {fileID: 6045432587833367063, guid: 517f57a34169fe54cbc62c634ec2c7ff, type: 3}
+  headSprites:
+  - {fileID: 0}
+  - {fileID: 1185625210376227553, guid: 517f57a34169fe54cbc62c634ec2c7ff, type: 3}
+  - {fileID: 0}
+  - {fileID: -6349360636359246829, guid: 8a2bd71162822674a8eaca851981089b, type: 3}
+  - {fileID: 0}
+  bodySprites:
+  - {fileID: 0}
+  - {fileID: -7475530327114993743, guid: 517f57a34169fe54cbc62c634ec2c7ff, type: 3}
+  - {fileID: 0}
+  - {fileID: 3163395358573969893, guid: 8a2bd71162822674a8eaca851981089b, type: 3}
+  - {fileID: 0}
+  legSprites:
+  - {fileID: 0}
+  - {fileID: 6045432587833367063, guid: 517f57a34169fe54cbc62c634ec2c7ff, type: 3}
+  - {fileID: 0}
+  - {fileID: -5393904256684418717, guid: 8a2bd71162822674a8eaca851981089b, type: 3}
+  - {fileID: 0}
 --- !u!1 &2037359845
 GameObject:
   m_ObjectHideFlags: 0
