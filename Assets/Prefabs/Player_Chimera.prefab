@@ -131,11 +131,13 @@ MonoBehaviour:
   head: {fileID: 1614976988192283709}
   torso: {fileID: 1614976987815428614}
   legs: {fileID: 1614976988421601177}
-  maxHp: 30
-  currentHp: 30
+  nickname: Player
+  maxHp: 50
+  currentHp: 50
   attack: 5
   defense: 5
   speed: 5
+  isDefending: 0
   headPart: 3
   bodyPart: 1
   legPart: 1

@@ -6,15 +6,10 @@ using TMPro;
 
 public class BattleHUD : MonoBehaviour
 {
-    public TextMeshProUGUI battleText;
+    
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI healthText;
     public Slider hpSlider;
-
-    public void setBattleText(string text)
-    {
-        battleText.text = text;
-    }
 
     public void setHUD(Chimera chimera)
     {
@@ -26,7 +21,15 @@ public class BattleHUD : MonoBehaviour
 
     public void setHp(Chimera chimera)
     {
-        healthText.text = (chimera.currentHp).ToString() + " / " + (chimera.maxHp).ToString();
+        if (chimera.currentHp <= 0) //If Chimera is dead, set text to 0
+        {
+            healthText.text = "0 / " + (chimera.maxHp).ToString();
+        }
+        else //Chimera is not dead, proceed as normal
+        {
+            healthText.text = (chimera.currentHp).ToString() + " / " + (chimera.maxHp).ToString();
+        }
+        
         hpSlider.value = chimera.currentHp;
     }
 }

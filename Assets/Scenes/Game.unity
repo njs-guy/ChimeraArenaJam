@@ -1102,7 +1102,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1720436758}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2121207940}
+        m_TargetAssemblyTypeName: TurnManager, Assembly-CSharp
+        m_MethodName: onDefendButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1720436758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1744,10 +1756,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Chimera
       objectReference: {fileID: 0}
-    - target: {fileID: 1614976987921550387, guid: 980230ea351c5ce4cb967283e19d01f7, type: 3}
-      propertyPath: nickname
-      value: Player
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 980230ea351c5ce4cb967283e19d01f7, type: 3}
 --- !u!1001 &5301937344002857986
@@ -1864,15 +1872,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
       propertyPath: speed
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
       propertyPath: attack
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
       propertyPath: defense
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
       propertyPath: nickname
@@ -1880,7 +1888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
       propertyPath: currentHp
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6487128896242768034, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
       propertyPath: m_RootOrder

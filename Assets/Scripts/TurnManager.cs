@@ -83,33 +83,80 @@ public class TurnManager : MonoBehaviour
         }
         else
         {
-            state = battleState.ENEMYTURN;
-            StartCoroutine(EnemyTurn());
+            startEnemyTurn();
         }
+    }
+
+    IEnumerator PlayerDefend()
+    {
+        bool isDead = enemyChimera.TakeDamage(playerChimera.attack);
+
+        setBattleText("The player defends!");
+        
+        yield return new WaitForSeconds(2f);
+
+        playerChimera.Defend();
+
+        startEnemyTurn();
+    }
+
+    IEnumerator PlayerHeal()
+    {
+        setBattleText("The player healed!");
+
+        playerChimera.Heal(5);
+        playerHUD.setHp(playerChimera);
+
+        yield return new WaitForSeconds(2f);
+
+        startEnemyTurn();
+    }
+
+    //sets state to ENEMYTURN and starts EnemyTurn()
+    void startEnemyTurn()
+    {
+        state = battleState.ENEMYTURN;
+        StartCoroutine(EnemyTurn());
     }
 
     IEnumerator EnemyTurn()
     {
-        setBattleText("The enemy attacks!");
+        int rand = Random.Range(0,10); //Rolls a number from 0 to 9
 
-        yield return new WaitForSeconds(1f);
-
-        bool isDead = playerChimera.TakeDamage(enemyChimera.attack);
-
-        playerHUD.setHp(playerChimera);
-
-        yield return new WaitForSeconds(1f);
-
-        if(isDead)
+        if (rand > 3) //attack
         {
-            state = battleState.LOST;
-            //lost battle
-        } else
+            setBattleText("The enemy attacks!");
+
+            yield return new WaitForSeconds(1f);
+
+            bool isDead = playerChimera.TakeDamage(enemyChimera.attack);
+
+            playerHUD.setHp(playerChimera);
+
+            yield return new WaitForSeconds(1f);
+
+            if(isDead)
+            {
+                state = battleState.LOST;
+                //lost battle
+            } else
+            {
+                state = battleState.PLAYERTURN;
+                PlayerTurn();
+            }
+        } 
+        else //defend
         {
+            setBattleText("The enemy defends!");
+
+            yield return new WaitForSeconds(2f);
+            enemyChimera.Defend();
+
             state = battleState.PLAYERTURN;
             PlayerTurn();
         }
         
+        //Debug.Log(rand);
     }
 
     void NextEnemy()
@@ -126,19 +173,6 @@ public class TurnManager : MonoBehaviour
         }
     }
 
-    IEnumerator PlayerHeal()
-    {
-        setBattleText("The player healed!");
-
-        playerChimera.Heal(5);
-        playerHUD.setHp(playerChimera);
-
-        yield return new WaitForSeconds(2f);
-
-        state = battleState.ENEMYTURN;
-        StartCoroutine(EnemyTurn());
-    }
-
     public void onAttackButton()
     {
         disableCommands();
@@ -149,6 +183,18 @@ public class TurnManager : MonoBehaviour
         }
 
         StartCoroutine(PlayerAttack());
+    }
+
+    public void onDefendButton()
+    {
+        disableCommands();
+
+        if(state != battleState.PLAYERTURN)
+        {
+            return; //do nothing if it is not the player's turn
+        }
+
+        StartCoroutine(PlayerDefend());
     }
 
     public void onSkillButton()
