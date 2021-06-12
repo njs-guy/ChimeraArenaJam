@@ -1757,16 +1757,8 @@ PrefabInstance:
       value: Player_Chimera
       objectReference: {fileID: 0}
     - target: {fileID: 1614976987921550387, guid: 980230ea351c5ce4cb967283e19d01f7, type: 3}
-      propertyPath: legPart
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1614976987921550387, guid: 980230ea351c5ce4cb967283e19d01f7, type: 3}
-      propertyPath: bodyPart
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1614976987921550387, guid: 980230ea351c5ce4cb967283e19d01f7, type: 3}
-      propertyPath: headPart
-      value: 3
+      propertyPath: nickname
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 980230ea351c5ce4cb967283e19d01f7, type: 3}
@@ -1883,37 +1875,57 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
-      propertyPath: speed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
-      propertyPath: attack
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
-      propertyPath: defense
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
       propertyPath: legPart
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
       propertyPath: bodyPart
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
       propertyPath: headPart
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
       propertyPath: nickname
       value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
-      propertyPath: currentHp
-      value: 30
-      objectReference: {fileID: 0}
+      propertyPath: legSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: -6583155732020471796, guid: a175f8302f67e124bbfd49eaf78f15db, type: 3}
+    - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
+      propertyPath: legSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 4150922257054961580, guid: 8f5733b3e9eee2b479cf241a46eddc5e, type: 3}
+    - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
+      propertyPath: legSprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 7521697127347132656, guid: 6133b923b474e0146acb0870aedacf99, type: 3}
+    - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
+      propertyPath: bodySprites.Array.data[0]
+      value: 
+      objectReference: {fileID: -7518524041257459519, guid: a175f8302f67e124bbfd49eaf78f15db, type: 3}
+    - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
+      propertyPath: bodySprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 4599004888236973458, guid: 8f5733b3e9eee2b479cf241a46eddc5e, type: 3}
+    - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
+      propertyPath: bodySprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 6688820631902906034, guid: 6133b923b474e0146acb0870aedacf99, type: 3}
+    - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
+      propertyPath: headSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: -5064401156898091283, guid: a175f8302f67e124bbfd49eaf78f15db, type: 3}
+    - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
+      propertyPath: headSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: -4798825762170945512, guid: 8f5733b3e9eee2b479cf241a46eddc5e, type: 3}
+    - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
+      propertyPath: headSprites.Array.data[4]
+      value: 
+      objectReference: {fileID: -429890163646538327, guid: 6133b923b474e0146acb0870aedacf99, type: 3}
     - target: {fileID: 6487128896242768034, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
       propertyPath: m_RootOrder
       value: 3

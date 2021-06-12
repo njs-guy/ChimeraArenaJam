@@ -131,34 +131,34 @@ MonoBehaviour:
   head: {fileID: 1614976988192283709}
   torso: {fileID: 1614976987815428614}
   legs: {fileID: 1614976988421601177}
-  nickname: Player
+  nickname: Chimera
   maxHp: 50
   currentHp: 50
   attack: 5
   defense: 5
   speed: 5
   isDefending: 0
-  headPart: 3
-  bodyPart: 1
-  legPart: 1
+  headPart: 0
+  bodyPart: 0
+  legPart: 0
   headSprites:
-  - {fileID: 0}
+  - {fileID: -5064401156898091283, guid: a175f8302f67e124bbfd49eaf78f15db, type: 3}
   - {fileID: 1185625210376227553, guid: 517f57a34169fe54cbc62c634ec2c7ff, type: 3}
-  - {fileID: 0}
+  - {fileID: -4798825762170945512, guid: 8f5733b3e9eee2b479cf241a46eddc5e, type: 3}
   - {fileID: -6349360636359246829, guid: 8a2bd71162822674a8eaca851981089b, type: 3}
-  - {fileID: 0}
+  - {fileID: -429890163646538327, guid: 6133b923b474e0146acb0870aedacf99, type: 3}
   bodySprites:
-  - {fileID: 0}
+  - {fileID: -7518524041257459519, guid: a175f8302f67e124bbfd49eaf78f15db, type: 3}
   - {fileID: -7475530327114993743, guid: 517f57a34169fe54cbc62c634ec2c7ff, type: 3}
-  - {fileID: 0}
+  - {fileID: 4599004888236973458, guid: 8f5733b3e9eee2b479cf241a46eddc5e, type: 3}
   - {fileID: 3163395358573969893, guid: 8a2bd71162822674a8eaca851981089b, type: 3}
-  - {fileID: 0}
+  - {fileID: 6688820631902906034, guid: 6133b923b474e0146acb0870aedacf99, type: 3}
   legSprites:
-  - {fileID: 0}
+  - {fileID: -6583155732020471796, guid: a175f8302f67e124bbfd49eaf78f15db, type: 3}
   - {fileID: 6045432587833367063, guid: 517f57a34169fe54cbc62c634ec2c7ff, type: 3}
-  - {fileID: 0}
+  - {fileID: 4150922257054961580, guid: 8f5733b3e9eee2b479cf241a46eddc5e, type: 3}
   - {fileID: -5393904256684418717, guid: 8a2bd71162822674a8eaca851981089b, type: 3}
-  - {fileID: 0}
+  - {fileID: 7521697127347132656, guid: 6133b923b474e0146acb0870aedacf99, type: 3}
 --- !u!1 &1614976988192283707
 GameObject:
   m_ObjectHideFlags: 0
