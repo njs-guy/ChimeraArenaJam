@@ -49,13 +49,38 @@ public class TurnManager : MonoBehaviour
         GameObject enemyGO = Instantiate(enemyObject);
         enemyChimera = enemyGO.GetComponent<Chimera>();
 
-        //Set sprites and stats
-
         playerHUD.setHUD(playerChimera);
         enemyHUD.setHUD(enemyChimera);
 
         yield return new WaitForSeconds(2f);
 
+        if(playerChimera.speed > enemyChimera.speed) //If the player is faster, they move first.
+        {
+            startPlayerTurn();
+
+        } else if(playerChimera.speed < enemyChimera.speed) //if the enemy is faster, they move first.
+        {
+            startEnemyTurn();
+        }
+        else if(playerChimera.speed == enemyChimera.speed) //if there is a speed tie
+        {
+            int rand = Random.Range(0,10); //Rolls a number from 0 to 9
+
+            if (rand > 4) //player moves first
+            {
+                startPlayerTurn();
+            } 
+            else //enemy moves first
+            {
+                startEnemyTurn();
+            }
+        }
+
+        
+    }
+
+    void startPlayerTurn()
+    {
         state = battleState.PLAYERTURN;
         PlayerTurn();
     }
@@ -141,8 +166,7 @@ public class TurnManager : MonoBehaviour
                 //lost battle
             } else
             {
-                state = battleState.PLAYERTURN;
-                PlayerTurn();
+                startPlayerTurn();
             }
         } 
         else //defend
@@ -152,8 +176,7 @@ public class TurnManager : MonoBehaviour
             yield return new WaitForSeconds(2f);
             enemyChimera.Defend();
 
-            state = battleState.PLAYERTURN;
-            PlayerTurn();
+            startPlayerTurn();
         }
         
         //Debug.Log(rand);

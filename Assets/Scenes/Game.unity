@@ -1756,6 +1756,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Chimera
       objectReference: {fileID: 0}
+    - target: {fileID: 1614976987921550387, guid: 980230ea351c5ce4cb967283e19d01f7, type: 3}
+      propertyPath: bodyPart
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 980230ea351c5ce4cb967283e19d01f7, type: 3}
 --- !u!1001 &5301937344002857986
@@ -1881,6 +1885,14 @@ PrefabInstance:
     - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
       propertyPath: defense
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
+      propertyPath: bodyPart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
+      propertyPath: headPart
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6487128896242768033, guid: 86ad362983943634d97bae313bfc18c2, type: 3}
       propertyPath: nickname
