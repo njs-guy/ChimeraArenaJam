@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 7363bf77d1e06e846a796122d4bee25e
+guid: 517f57a34169fe54cbc62c634ec2c7ff
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4402185496449244741
-    second: test_chimera_0
+      213: 1185625210376227553
+    second: bunny_0
   - first:
-      213: -3235777578014555708
-    second: test_chimera_1
+      213: -7475530327114993743
+    second: bunny_1
   - first:
-      213: -3869367789375871925
-    second: test_chimera_2
+      213: 6045432587833367063
+    second: bunny_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -100,7 +100,49 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: test_chimera_0
+      name: bunny_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ea093dd8df247010800000000000000
+      internalID: 1185625210376227553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 24
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bfa6a846c4914890800000000000000
+      internalID: -7475530327114993743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny_2
       rect:
         serializedVersion: 2
         x: 0
@@ -108,56 +150,14 @@ TextureImporter:
         width: 24
         height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb124c06d9b48e2c0800000000000000
-      internalID: -4402185496449244741
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: test_chimera_1
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 0
-        width: 24
-        height: 24
-      alignment: 9
-      pivot: {x: 0.56838906, y: 0.50000006}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4c1c44acf653813d0800000000000000
-      internalID: -3235777578014555708
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: test_chimera_2
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b44a9e01f7e3d4ac0800000000000000
-      internalID: -3869367789375871925
+      spriteID: 71ad06798e0b5e350800000000000000
+      internalID: 6045432587833367063
       vertices: []
       indices: 
       edges: []
