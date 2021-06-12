@@ -64,6 +64,22 @@ public class Chimera : MonoBehaviour
                 speed -= statChange;
                 break;
         }
+
+        //if a stat is less than or equal to 0, set to 1
+        if(attack <= 0)
+        {
+            attack = 1;
+        }
+
+        if(defense <= 0)
+        {
+            defense = 1;
+        }
+
+        if(speed <= 0)
+        {
+            speed = 1;
+        }
     }
 
     //Assigns each part sprite, and determines stats

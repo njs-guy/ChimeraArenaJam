@@ -79,6 +79,7 @@ public class TurnManager : MonoBehaviour
         
     }
 
+    //sets state to ENEMYTURN and starts PlayerTurn()
     void startPlayerTurn()
     {
         state = battleState.PLAYERTURN;
@@ -103,8 +104,10 @@ public class TurnManager : MonoBehaviour
         if (isDead)
         {
             state = battleState.WON;
-            //StartCoroutine(NextEnemy());
-            NextEnemy();
+            setBattleText("The enemy has acended to Valhalla...");
+            
+            yield return new WaitForSeconds(2f);
+            StartCoroutine(NextEnemy());
         }
         else
         {
@@ -163,7 +166,7 @@ public class TurnManager : MonoBehaviour
             if(isDead)
             {
                 state = battleState.LOST;
-                //lost battle
+                GameOver();
             } else
             {
                 startPlayerTurn();
@@ -182,18 +185,17 @@ public class TurnManager : MonoBehaviour
         //Debug.Log(rand);
     }
 
-    void NextEnemy()
+    IEnumerator NextEnemy()
     {
         setBattleText("A new challenger approaches!");
+        yield return new WaitForSeconds(2f);
 
-        if(state == battleState.WON)
-        {
-            //regenerate enemy, restore their health
-        }
-        else if (state == battleState.LOST)
-        {
-            //lose
-        }
+        SetupBattle();
+    }
+
+    void GameOver()
+    {
+        setBattleText("You have ascended to Valhalla. Game over...");
     }
 
     public void onAttackButton()
