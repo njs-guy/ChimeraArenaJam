@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 8a2bd71162822674a8eaca851981089b
+guid: a175f8302f67e124bbfd49eaf78f15db
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6349360636359246829
-    second: octopus_0
+      213: -5064401156898091283
+    second: bird_0
   - first:
-      213: 3163395358573969893
-    second: octopus_1
+      213: -7518524041257459519
+    second: bird_1
   - first:
-      213: -5393904256684418717
-    second: octopus_2
+      213: -6583155732020471796
+    second: bird_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: octopus_0
+      name: bird_0
       rect:
         serializedVersion: 2
         x: 0
@@ -114,14 +114,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31c75fe342a82e7a0800000000000000
-      internalID: -6349360636359246829
+      spriteID: dee030beaf1a7b9b0800000000000000
+      internalID: -5064401156898091283
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: octopus_1
+      name: bird_1
       rect:
         serializedVersion: 2
         x: 0
@@ -135,14 +135,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e1cbe77153a6eb20800000000000000
-      internalID: 3163395358573969893
+      spriteID: 1c06d952836d8a790800000000000000
+      internalID: -7518524041257459519
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: octopus_2
+      name: bird_2
       rect:
         serializedVersion: 2
         x: 0
@@ -156,8 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3699bdb18a00525b0800000000000000
-      internalID: -5393904256684418717
+      spriteID: c08d7d3adbee3a4a0800000000000000
+      internalID: -6583155732020471796
       vertices: []
       indices: 
       edges: []

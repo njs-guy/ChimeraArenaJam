@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 8a2bd71162822674a8eaca851981089b
+guid: 6133b923b474e0146acb0870aedacf99
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6349360636359246829
-    second: octopus_0
+      213: -429890163646538327
+    second: turtle_0
   - first:
-      213: 3163395358573969893
-    second: octopus_1
+      213: 6688820631902906034
+    second: turtle_1
   - first:
-      213: -5393904256684418717
-    second: octopus_2
+      213: 7521697127347132656
+    second: turtle_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: octopus_0
+      name: turtle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -114,14 +114,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31c75fe342a82e7a0800000000000000
-      internalID: -6349360636359246829
+      spriteID: 9add96f7c29b80af0800000000000000
+      internalID: -429890163646538327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: octopus_1
+      name: turtle_1
       rect:
         serializedVersion: 2
         x: 0
@@ -135,14 +135,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e1cbe77153a6eb20800000000000000
-      internalID: 3163395358573969893
+      spriteID: 2b660e20de673dc50800000000000000
+      internalID: 6688820631902906034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: octopus_2
+      name: turtle_2
       rect:
         serializedVersion: 2
         x: 0
@@ -156,8 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3699bdb18a00525b0800000000000000
-      internalID: -5393904256684418717
+      spriteID: 0f81a978faf626860800000000000000
+      internalID: 7521697127347132656
       vertices: []
       indices: 
       edges: []
