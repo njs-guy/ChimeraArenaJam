@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public enum battleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
+public enum battleState { START, PLAYERTURN, ENEMYTURN, WON, LOST, CREATOR}
 
 public class TurnManager : MonoBehaviour
 {
@@ -23,6 +23,7 @@ public class TurnManager : MonoBehaviour
     public GameObject defendBtn;
     public GameObject skillsBtn;
     
+    public int score = 0;
     public battleState state;
 
 
@@ -37,6 +38,18 @@ public class TurnManager : MonoBehaviour
     public void setBattleText(string text)
     {
         battleText.text = text;
+    }
+
+    //The first battle needs to set up the player
+    IEnumerator FirstBattle()
+    {
+        yield return new WaitForSeconds(2f);
+    }
+
+    //Subsequent battles need to create a new enemy to fight
+    IEnumerator SubBattle()
+    {
+        yield return new WaitForSeconds(2f);
     }
 
     IEnumerator SetupBattle()
