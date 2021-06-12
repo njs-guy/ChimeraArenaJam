@@ -353,6 +353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5301937343920395814}
   - component: {fileID: 5301937343920395815}
+  - component: {fileID: 6992917862934094503}
   m_Layer: 5
   m_Name: HP_Bar_Left
   m_TagString: Untagged
@@ -434,6 +435,21 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6992917862934094503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5301937343920395809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab96bc5d3801d14380ac2ba9270b68d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 5301937343673889008}
+  healthText: {fileID: 5301937343404368822}
+  hpSlider: {fileID: 5301937343920395815}
 --- !u!1 &5301937343946843477
 GameObject:
   m_ObjectHideFlags: 0

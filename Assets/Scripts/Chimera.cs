@@ -17,7 +17,8 @@ public class Chimera : MonoBehaviour
     [SerializeField] public SpriteRenderer torso;
     [SerializeField] public SpriteRenderer legs;
 
-    [SerializeField] public int hp = 30;
+    [SerializeField] public int maxHp = 30;
+    [SerializeField] public int currentHp = 30;
     [SerializeField] public int attack = 5;
     [SerializeField] public int defense = 5;
     [SerializeField] public int speed = 5;
@@ -136,9 +137,34 @@ public class Chimera : MonoBehaviour
         updateParts();
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool TakeDamage(int dmg)
     {
-        
+        int damage = dmg - defense;
+        if (damage <= 0) //If damage is less than or equal to 0, change damage to 1
+        {
+            damage = 1;
+        }
+
+        currentHp -= damage;
+
+        if (currentHp <= 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        //If chimera is dead, return true. If alive, return false.
+    }
+
+    public void Heal(int amount)
+    {
+        currentHp += amount;
+
+        if (currentHp > maxHp)
+        {
+            currentHp = maxHp;
+        }
     }
 }
