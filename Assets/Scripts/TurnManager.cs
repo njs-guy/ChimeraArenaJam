@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public enum battleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
@@ -16,6 +17,7 @@ public class TurnManager : MonoBehaviour
 
     public BattleHUD playerHUD;
     public BattleHUD enemyHUD;
+    public TextMeshProUGUI battleText;
 
     public GameObject attackBtn;
     public GameObject defendBtn;
@@ -32,8 +34,15 @@ public class TurnManager : MonoBehaviour
         //SetupBattle();
     }
 
+    public void setBattleText(string text)
+    {
+        battleText.text = text;
+    }
+
     IEnumerator SetupBattle()
     {
+        setBattleText("The battle begins...");
+
         GameObject playerGO = Instantiate(playerObject);
         playerChimera = playerGO.GetComponent<Chimera>();
 
@@ -53,6 +62,7 @@ public class TurnManager : MonoBehaviour
 
     void PlayerTurn()
     {
+        setBattleText("Choose a command.");
         enableCommands();
     }
 
@@ -60,8 +70,9 @@ public class TurnManager : MonoBehaviour
     {
         bool isDead = enemyChimera.TakeDamage(playerChimera.attack);
 
+        setBattleText("The player attacks!");
         enemyHUD.setHp(enemyChimera);
-
+        
         yield return new WaitForSeconds(2f);
 
         if (isDead)
@@ -79,7 +90,7 @@ public class TurnManager : MonoBehaviour
 
     IEnumerator EnemyTurn()
     {
-        //Text
+        setBattleText("The enemy attacks!");
 
         yield return new WaitForSeconds(1f);
 
@@ -103,6 +114,8 @@ public class TurnManager : MonoBehaviour
 
     void NextEnemy()
     {
+        setBattleText("A new challenger approaches!");
+
         if(state == battleState.WON)
         {
             //regenerate enemy, restore their health
@@ -115,6 +128,8 @@ public class TurnManager : MonoBehaviour
 
     IEnumerator PlayerHeal()
     {
+        setBattleText("The player healed!");
+
         playerChimera.Heal(5);
         playerHUD.setHp(playerChimera);
 
@@ -139,7 +154,7 @@ public class TurnManager : MonoBehaviour
     public void onSkillButton()
     {
         disableCommands();
-        
+
         if(state != battleState.PLAYERTURN)
         {
             return; //do nothing if it is not the player's turn

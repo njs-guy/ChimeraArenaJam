@@ -17,6 +17,7 @@ public class Chimera : MonoBehaviour
     [SerializeField] public SpriteRenderer torso;
     [SerializeField] public SpriteRenderer legs;
 
+    [SerializeField] public string nickname = "Chimera";
     [SerializeField] public int maxHp = 30;
     [SerializeField] public int currentHp = 30;
     [SerializeField] public int attack = 5;
