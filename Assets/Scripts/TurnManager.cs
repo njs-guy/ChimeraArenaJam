@@ -35,7 +35,6 @@ public class TurnManager : MonoBehaviour
     {
         state = battleState.START;
         StartCoroutine(SetupBattle());
-        //SetupBattle();
     }
 
     public void setBattleText(string text)
@@ -43,36 +42,43 @@ public class TurnManager : MonoBehaviour
         battleText.text = text;
     }
 
-    //The first battle needs to set up the player
-    IEnumerator FirstBattle()
+    //creates an enemy to fight
+    void generateEnemy()
     {
-        yield return new WaitForSeconds(2f);
-    }
+        int rand1 = Random.Range(0,5);
+        int rand2 = Random.Range(0,5);
+        int rand3 = Random.Range(0,5);
 
-    //Subsequent battles need to create a new enemy to fight
-    IEnumerator SubBattle()
-    {
-        yield return new WaitForSeconds(2f);
+        int[] chVals = {rand1, rand2, rand3} ; //Rolls numbers from 0 to 4
+
+        enemyChimera.currentHp = enemyChimera.maxHp; //restores HP
+
+        enemyChimera.headPart = (Chimera.Animal)chVals[0]; //sets headPart
+        enemyChimera.bodyPart = (Chimera.Animal)chVals[1]; //sets bodyPart
+        enemyChimera.legPart = (Chimera.Animal)chVals[2]; //sets legPart
+
+        enemyChimera.updateParts(); //updates the sprite and stats
     }
 
     IEnumerator SetupBattle()
     {
         setBattleText("The battle begins...");
 
-        //GameObject playerGO = Instantiate(playerObject);
         playerChimera = playerObject.GetComponent<Chimera>();
-
-        //GameObject enemyGO = Instantiate(enemyObject);
         enemyChimera = enemyObject.GetComponent<Chimera>();
 
-        //int[] characterVals = CharacterCreator.getCharacterValues();
-        //CharacterCreator.getChara
+        generateEnemy();
         
         playerHUD.setHUD(playerChimera);
         enemyHUD.setHUD(enemyChimera);
 
         yield return new WaitForSeconds(2f);
 
+        setTurnOrder();
+    }
+
+    void setTurnOrder()
+    {
         if(playerChimera.speed > enemyChimera.speed) //If the player is faster, they move first.
         {
             startPlayerTurn();
@@ -94,8 +100,6 @@ public class TurnManager : MonoBehaviour
                 startEnemyTurn();
             }
         }
-
-        
     }
 
     //sets state to ENEMYTURN and starts PlayerTurn()
@@ -123,6 +127,7 @@ public class TurnManager : MonoBehaviour
 
         if (isDead)
         {
+            enemyObject.SetActive(false);
             state = battleState.WON;
             setBattleText("The enemy has acended to Valhalla...");
             
@@ -173,7 +178,16 @@ public class TurnManager : MonoBehaviour
 
         int rand = Random.Range(0,10); //Rolls a number from 0 to 9
 
-        if (rand > 3) //attack
+        if (rand == 0) //defend
+        {
+            setBattleText("The enemy defends!");
+
+            yield return new WaitForSeconds(2f);
+            enemyChimera.Defend();
+
+            startPlayerTurn();
+        } 
+        else //attack
         {
             setBattleText("The enemy attacks!");
 
@@ -187,21 +201,13 @@ public class TurnManager : MonoBehaviour
 
             if(isDead)
             {
+                playerObject.SetActive(false);
                 state = battleState.LOST;
                 GameOver();
             } else
             {
                 startPlayerTurn();
             }
-        } 
-        else //defend
-        {
-            setBattleText("The enemy defends!");
-
-            yield return new WaitForSeconds(2f);
-            enemyChimera.Defend();
-
-            startPlayerTurn();
         }
         
         Debug.Log(rand);
@@ -212,7 +218,10 @@ public class TurnManager : MonoBehaviour
         setBattleText("A new challenger approaches!");
         yield return new WaitForSeconds(2f);
 
-        SetupBattle();
+        enemyObject.SetActive(true);
+        generateEnemy();
+        enemyHUD.setHUD(enemyChimera);
+        setTurnOrder();  
     }
 
     void GameOver()
