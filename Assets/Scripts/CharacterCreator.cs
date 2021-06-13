@@ -35,10 +35,10 @@ public class CharacterCreator : MonoBehaviour
         previewChimera.legPart = (Chimera.Animal)characterVals[2];
 
         //updates text and previews
+        previewChimera.updateParts();
         attackStat.text = "Attack: " + previewChimera.attack.ToString();
         defenseStat.text = "Defense: " + previewChimera.defense.ToString();
-        speedStat.text = "Speed: " + previewChimera.speed.ToString();
-        previewChimera.updateParts();
+        speedStat.text = "Speed: " + previewChimera.speed.ToString(); 
     }
 
     public int[] getCharacterValues()

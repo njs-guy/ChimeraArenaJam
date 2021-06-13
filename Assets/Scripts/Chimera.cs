@@ -222,8 +222,6 @@ public class Chimera : MonoBehaviour
 
         currentHp -= damage; //Decrease the currentHp by damage
 
-        isDefending = false;
-
         if (currentHp <= 0)
         {
             return true;

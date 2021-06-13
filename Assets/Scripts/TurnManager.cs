@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public enum battleState { START, PLAYERTURN, ENEMYTURN, WON, LOST, CREATOR}
@@ -23,6 +24,7 @@ public class TurnManager : MonoBehaviour
     public GameObject attackBtn;
     public GameObject defendBtn;
     public GameObject skillsBtn;
+    public GameObject retryBtn;
     
     public int score = 0;
     public battleState state;
@@ -107,6 +109,7 @@ public class TurnManager : MonoBehaviour
     {
         setBattleText("Choose a command.");
         enableCommands();
+        playerChimera.isDefending = false; //no longer defending
     }
 
     IEnumerator PlayerAttack()
@@ -166,6 +169,8 @@ public class TurnManager : MonoBehaviour
 
     IEnumerator EnemyTurn()
     {
+        enemyChimera.isDefending = false; //no longer defending
+
         int rand = Random.Range(0,10); //Rolls a number from 0 to 9
 
         if (rand > 3) //attack
@@ -199,7 +204,7 @@ public class TurnManager : MonoBehaviour
             startPlayerTurn();
         }
         
-        //Debug.Log(rand);
+        Debug.Log(rand);
     }
 
     IEnumerator NextEnemy()
@@ -213,6 +218,7 @@ public class TurnManager : MonoBehaviour
     void GameOver()
     {
         setBattleText("You have ascended to Valhalla. Game over...");
+        retryBtn.SetActive(true);
     }
 
     public void onAttackButton()
@@ -249,6 +255,11 @@ public class TurnManager : MonoBehaviour
         }
 
         StartCoroutine(PlayerHeal());
+    }
+
+    public void onRetryButton()
+    {
+        SceneManager.LoadScene(0); //Loads into Title Screen
     }
 
     public void enableCommands()
