@@ -12,7 +12,6 @@ public class TurnManager : MonoBehaviour
 
     public GameObject playerObject;
     public GameObject enemyObject;
-    //public GameObject creatorObject;
 
     Chimera playerChimera;
     Chimera enemyChimera;
@@ -20,6 +19,7 @@ public class TurnManager : MonoBehaviour
     public BattleHUD playerHUD;
     public BattleHUD enemyHUD;
     public TextMeshProUGUI battleText;
+    public TextMeshProUGUI scoreText;
 
     public GameObject attackBtn;
     public GameObject defendBtn;
@@ -215,9 +215,11 @@ public class TurnManager : MonoBehaviour
 
     IEnumerator NextEnemy()
     {
+        score += 1;
         setBattleText("A new challenger approaches!");
         yield return new WaitForSeconds(2f);
 
+        scoreText.text = "Foes defeated: " + score.ToString();
         enemyObject.SetActive(true);
         generateEnemy();
         enemyHUD.setHUD(enemyChimera);

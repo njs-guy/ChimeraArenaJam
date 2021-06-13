@@ -10,6 +10,7 @@ public class BattleHUD : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI healthText;
     public Slider hpSlider;
+    public TextMeshProUGUI scoreText;
 
     public void setHUD(Chimera chimera)
     {
