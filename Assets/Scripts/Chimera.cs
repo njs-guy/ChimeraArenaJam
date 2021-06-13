@@ -4,14 +4,7 @@ using UnityEngine;
 
 public class Chimera : MonoBehaviour
 {
-    public enum Animal
-    {
-        bird,
-        bunny,
-        monkey,
-        octopus,
-        turtle
-    }
+    public enum Animal { bird, bunny, monkey, octopus, turtle }
 
     [SerializeField] public SpriteRenderer head;
     [SerializeField] public SpriteRenderer torso;
@@ -83,7 +76,7 @@ public class Chimera : MonoBehaviour
     }
 
     //Assigns each part sprite, and determines stats
-    void updateParts()
+    public void updateParts()
     {
         //checks what animal each part should be, and changes the sprite
         Sprite currentHead;

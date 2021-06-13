@@ -11,6 +11,7 @@ public class TurnManager : MonoBehaviour
 
     public GameObject playerObject;
     public GameObject enemyObject;
+    //public GameObject creatorObject;
 
     Chimera playerChimera;
     Chimera enemyChimera;
@@ -56,12 +57,15 @@ public class TurnManager : MonoBehaviour
     {
         setBattleText("The battle begins...");
 
-        GameObject playerGO = Instantiate(playerObject);
-        playerChimera = playerGO.GetComponent<Chimera>();
+        //GameObject playerGO = Instantiate(playerObject);
+        playerChimera = playerObject.GetComponent<Chimera>();
 
-        GameObject enemyGO = Instantiate(enemyObject);
-        enemyChimera = enemyGO.GetComponent<Chimera>();
+        //GameObject enemyGO = Instantiate(enemyObject);
+        enemyChimera = enemyObject.GetComponent<Chimera>();
 
+        //int[] characterVals = CharacterCreator.getCharacterValues();
+        //CharacterCreator.getChara
+        
         playerHUD.setHUD(playerChimera);
         enemyHUD.setHUD(enemyChimera);
 
